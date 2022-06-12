@@ -157,24 +157,25 @@ class RespondHTLC extends Component {
     }
   }
 
+  //Changed values to mean 7 block confirmation time
   getFinalityTime = (chain, network) => {
     if (chain === 'Ethereum' || chain === 'ETH') {
       if (network === "Ropsten") {
-        return 150 //ropsten network time, to be changed as per according to mainnet analysis
+        return 68.048145 
       } if (network === "Kovan") {
-        return 60
+        return 37.414094
       } if (network === "Rinkeby") {
-        return 90
+        return 103.899296
       } if (network === "Goerli") {
-        return 120
+        return 120.815506
       }
     }
     else if (chain === 'Tron' || chain === 'TRX') {
       if (network === "Shasta Test") {
-        return 150 //Shasta Test, to be changed
-      }
+        return 26.305858 
+      } // Main Nets have not been analysed in latest experiment so data unchanged 
       else if (network === "TronGrid Main") {
-        return 150 //TronGrid Main, to be changed
+        return 150 //TronGrid Main, to be changed 
       }
       else if (network === "TronStack Main") {
         return 150 //TronStack Main, to be changed
